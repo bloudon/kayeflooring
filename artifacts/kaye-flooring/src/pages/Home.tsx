@@ -167,7 +167,7 @@ export default function Home() {
               <div>
                 <h2 className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70 mb-3">About The Owner</h2>
                 <h3 className="text-4xl md:text-5xl font-serif font-bold text-white leading-tight">
-                  Hi, I'm Nicholas Kaye.
+                  Hi, I'm Gerrit Kaye.
                 </h3>
               </div>
               <p className="text-lg text-primary-foreground/90 leading-relaxed font-light">
@@ -199,7 +199,7 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square md:aspect-[4/3] rounded-sm overflow-hidden border-8 border-white/10 shadow-2xl">
-                <img src={ownerImg} alt="Nicholas Kaye" className="w-full h-full object-cover" />
+                <img src={ownerImg} alt="Gerrit Kaye" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl max-w-[200px] hidden md:block rounded-sm">
                 <div className="flex gap-1 text-yellow-500 mb-2">

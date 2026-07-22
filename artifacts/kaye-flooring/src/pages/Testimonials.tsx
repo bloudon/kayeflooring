@@ -8,14 +8,14 @@ const reviews = [
     name: "Sarah Jenkins",
     location: "Ormond Beach, FL",
     project: "Solid Hardwood Installation",
-    text: "Nicholas and his team transformed our downstairs living area. The attention to detail around our stone fireplace was incredible. They showed up when they said they would, kept the house clean, and the final result is stunning. Worth every penny.",
+    text: "Gerrit and his team transformed our downstairs living area. The attention to detail around our stone fireplace was incredible. They showed up when they said they would, kept the house clean, and the final result is stunning. Worth every penny.",
     rating: 5
   },
   {
     name: "Michael Torres",
     location: "Port Orange, FL",
     project: "Custom Stairs & LVP",
-    text: "We had ugly carpet on our stairs that Nicholas replaced with custom stained wood treads to match our new LVP floors. The craftsmanship is flawless. It completely changed the look of our entryway. Highly professional from start to finish.",
+    text: "We had ugly carpet on our stairs that Gerrit replaced with custom stained wood treads to match our new LVP floors. The craftsmanship is flawless. It completely changed the look of our entryway. Highly professional from start to finish.",
     rating: 5
   },
   {

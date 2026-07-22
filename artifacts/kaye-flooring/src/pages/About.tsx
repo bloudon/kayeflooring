@@ -19,7 +19,7 @@ export default function About() {
             <div className="aspect-[3/4] max-w-md mx-auto lg:ml-0 relative z-10">
               <img 
                 src={ownerImg} 
-                alt="Nicholas Kaye, Owner" 
+                alt="Gerrit Kaye, Owner" 
                 className="w-full h-full object-cover rounded-sm shadow-2xl"
               />
             </div>
@@ -45,7 +45,7 @@ export default function About() {
 
             <div className="prose prose-lg prose-p:text-muted-foreground prose-p:leading-relaxed">
               <p>
-                Kaye Flooring Inc was founded by Nicholas Kaye with a simple premise: Central Florida homeowners deserve better than the rushed, mass-volume installations provided by big-box stores.
+                Kaye Flooring Inc was founded by Gerrit Kaye with a simple premise: Central Florida homeowners deserve better than the rushed, mass-volume installations provided by big-box stores.
               </p>
               <p>
                 Flooring is the foundation of your home's interior. It's the surface you walk on, play on, and live on every single day. A poor installation isn't just an aesthetic issue—it's a daily annoyance that diminishes the value of your property.
