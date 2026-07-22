@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Kaye Flooring Inc"
+version = "1.0.0"
+id = "artifacts/kaye-flooring"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24338
+
+[services.development]
+run = "pnpm --filter @workspace/kaye-flooring run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kaye-flooring", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kaye-flooring/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24338"
+BASE_PATH = "/"
