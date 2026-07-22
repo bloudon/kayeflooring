@@ -12,7 +12,7 @@ export function Footer() {
               <img
                 src="/kaye-flooring-logo.png"
                 alt="Kaye Flooring Inc."
-                className="h-16 w-auto object-contain"
+                className="h-32 w-auto object-contain"
               />
             </div>
             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
