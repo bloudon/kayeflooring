@@ -38,16 +38,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center transform transition-transform group-hover:rotate-6">
-              <span className="text-primary-foreground font-serif font-bold text-xl leading-none">K</span>
-            </div>
-            <span className={cn(
-              "font-serif font-bold text-xl tracking-tight transition-colors",
-              scrolled ? "text-foreground" : "text-foreground md:text-white"
-            )}>
-              Kaye Flooring
-            </span>
+          <div className="flex items-center cursor-pointer group">
+            <img
+              src="/kaye-flooring-logo.png"
+              alt="Kaye Flooring Inc."
+              className="h-12 w-auto object-contain transition-opacity group-hover:opacity-90"
+            />
           </div>
         </Link>
 

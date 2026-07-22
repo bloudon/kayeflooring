@@ -8,13 +8,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           
           <div className="md:col-span-1 space-y-4">
-            <div className="flex items-center gap-2 group mb-6">
-              <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
-                <span className="text-primary-foreground font-serif font-bold text-xl leading-none">K</span>
-              </div>
-              <span className="font-serif font-bold text-2xl tracking-tight text-white">
-                Kaye Flooring
-              </span>
+            <div className="mb-6">
+              <img
+                src="/kaye-flooring-logo.png"
+                alt="Kaye Flooring Inc."
+                className="h-16 w-auto object-contain"
+              />
             </div>
             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
               Central Florida's trusted experts in premium hardwood, custom stairs, and luxury vinyl plank installation. Craftsmanship you can stand on.
