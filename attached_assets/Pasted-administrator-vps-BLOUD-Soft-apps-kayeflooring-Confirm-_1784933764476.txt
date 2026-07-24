@@ -1,0 +1,59 @@
+administrator@vps-BLOUD-Soft:~/apps/kayeflooring$ # Confirm your config is enabled
+ls -la /etc/nginx/sites-enabled/
+
+# See what's in the permitsmanager config
+sudo cat /etc/nginx/sites-enabled/$(sudo ls /etc/nginx/sites-enabled/ | grep -i permit)
+ls: cannot access '/etc/nginx/sites-enabled/': Permission denied
+# Main app — app.permitsmanager.com
+server {
+    server_name app.permitsmanager.com;
+    client_max_body_size 100m;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_certificate /etc/letsencrypt/live/app.permitsmanager.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/app.permitsmanager.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+# pflow. → redirect to app.
+server {
+    server_name pflow.permitsmanager.com;
+    return 301 https://app.permitsmanager.com$request_uri;
+
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_certificate /etc/letsencrypt/live/pflow.permitsmanager.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pflow.permitsmanager.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+# HTTP → HTTPS for app.
+server {
+    listen 80;
+    listen [::]:80;
+    server_name app.permitsmanager.com;
+    client_max_body_size 100m;
+    return 301 https://app.permitsmanager.com$request_uri;
+}
+
+# HTTP → HTTPS for pflow.
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name pflow.permitsmanager.com;
+    return 301 https://app.permitsmanager.com$request_uri;
+}
