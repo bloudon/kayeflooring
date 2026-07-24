@@ -1,0 +1,34 @@
+administrator@vps-BLOUD-Soft:~/apps/kayeflooring$ # Remove the old symlink and config
+sudo rm /etc/nginx/sites-enabled/kayeflooring.com
+sudo mv /etc/nginx/sites-available/kayeflooring.com /etc/nginx/sites-available/kayeflooring.com.conf
+
+# Re-link with the correct name
+sudo ln -s /etc/nginx/sites-available/kayeflooring.com.conf /etc/nginx/sites-enabled/kayeflooring.com.conf
+
+# Test and reload
+sudo nginx -t && sudo systemctl reload nginx
+curl -I http://kayeflooring.com
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/app.fnbcostpro.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/www.erecording-fl.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/www.erecording-fl.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl-certificates/fhd.com.crt"
+nginx: [warn] "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl-certificates/fhd.com.crt"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/fnbcostpro.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/app.permitsmanager.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/pflow.permitsmanager.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/bldpermit.com/fullchain.pem"
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+HTTP/1.1 301 Moved Permanently
+Server: nginx
+Date: Fri, 24 Jul 2026 23:05:05 GMT
+Content-Type: text/html
+Content-Length: 162
+Connection: keep-alive
+Location: https://app.permitsmanager.com/
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-Permitted-Cross-Domain-Policies: master-only
+Referrer-Policy: same-origin
+
