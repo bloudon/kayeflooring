@@ -1,12 +1,14 @@
 import { useState, useMemo } from "react";
 import { useSearch } from "wouter";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Tag } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Tag, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+
+const GOOGLE_REVIEW_URL = "https://g.page/r/CbI2aQ6FKayeFlooring/review";
 
 const REF_LABELS: Record<string, string> = {
   "hero":                  "Hero — Get Your Free Estimate",
@@ -46,6 +48,7 @@ export default function Contact() {
     message:   "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const set = (field: keyof typeof formData) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -82,6 +85,7 @@ export default function Contact() {
       }
 
       setFormData({ firstName: "", lastName: "", email: "", phone: "", service: preselectedService, message: "" });
+      setSubmitted(true);
     } catch (err) {
       toast({
         title: "Something went wrong",
@@ -258,6 +262,29 @@ export default function Contact() {
                 {isSubmitting ? "Sending Request..." : "Request Free Estimate"}
               </Button>
             </form>
+
+            {submitted && (
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mt-6 bg-card border border-border rounded-sm p-6 shadow-sm flex flex-col sm:flex-row items-center gap-5"
+              >
+                <div className="flex gap-0.5 text-yellow-500 shrink-0">
+                  {[1,2,3,4,5].map(i => <Star key={i} size={18} fill="currentColor" />)}
+                </div>
+                <div className="flex-1 text-center sm:text-left">
+                  <p className="font-semibold text-foreground text-sm">Had a great experience with us?</p>
+                  <p className="text-muted-foreground text-sm mt-0.5">Leave a quick Google review — it only takes a minute and helps other homeowners find us.</p>
+                </div>
+                <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="shrink-0">
+                  <Button variant="outline" size="sm" className="rounded-none gap-2 whitespace-nowrap">
+                    <ExternalLink size={14} />
+                    Leave a Review
+                  </Button>
+                </a>
+              </motion.div>
+            )}
           </motion.div>
 
         </div>

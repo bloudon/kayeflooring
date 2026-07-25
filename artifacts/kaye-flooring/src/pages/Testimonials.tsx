@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+
+const GOOGLE_REVIEW_URL = "https://g.page/r/CbI2aQ6FKayeFlooring/review";
 
 const reviews = [
   {
@@ -98,11 +100,33 @@ export default function Testimonials() {
           ))}
         </div>
 
+        {/* Leave a Review CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center border border-border bg-card py-12 px-6 rounded-sm shadow-sm max-w-2xl mx-auto"
+        >
+          <div className="flex justify-center gap-1 text-yellow-500 mb-4">
+            {[1, 2, 3, 4, 5].map(i => <Star key={i} size={20} fill="currentColor" />)}
+          </div>
+          <h2 className="text-2xl font-serif font-bold text-foreground mb-3">Happy with your floors?</h2>
+          <p className="text-muted-foreground mb-6">
+            A quick Google review makes a huge difference and helps your neighbors find us. It only takes a minute.
+          </p>
+          <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="outline" className="rounded-none px-10 gap-2">
+              <ExternalLink size={16} />
+              Leave a Google Review
+            </Button>
+          </a>
+        </motion.div>
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 text-center bg-secondary/10 py-16 px-4 rounded-sm"
+          className="mt-10 text-center bg-secondary/10 py-16 px-4 rounded-sm"
         >
           <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Ready to be our next success story?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">Contact us today to schedule your free in-home consultation and estimate.</p>
