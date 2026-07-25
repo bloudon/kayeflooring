@@ -77,7 +77,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/70 text-sm">
                 <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                <span>Port Orange, FL<br/>Serving Central Florida</span>
+                <span>Port Orange, FL<br/>Serving Volusia, Lake, Marion<br/>&amp; Orange Counties</span>
               </li>
               <li className="flex items-center gap-3 text-white/70 text-sm">
                 <Phone size={18} className="text-primary shrink-0" />
