@@ -1,0 +1,148 @@
+
+Last login: Fri Jul 24 21:28:18 2026 from 162.237.250.163
+administrator@vps-BLOUD-Soft:~$ cd apps/kayeflooring/
+administrator@vps-BLOUD-Soft:~/apps/kayeflooring$ git pull
+remote: Enumerating objects: 66, done.
+remote: Counting objects: 100% (66/66), done.
+remote: Compressing objects: 100% (19/19), done.
+remote: Total 43 (delta 24), reused 43 (delta 24), pack-reused 0 (from 0)
+Unpacking objects: 100% (43/43), 81.27 KiB | 660.00 KiB/s, done.
+From https://github.com/bloudon/kayeflooring
+   7cc7af4..93ea0df  main       -> origin/main
+Updating 7cc7af4..93ea0df
+Fast-forward
+ artifacts/api-server/package.json                        |   2 ++
+ artifacts/api-server/src/routes/contact.ts               |  83 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ artifacts/api-server/src/routes/index.ts                 |   2 ++
+ artifacts/kaye-flooring/index.html                       |   4 +++-
+ artifacts/kaye-flooring/public/apple-touch-icon.png      | Bin 0 -> 30087 bytes
+ artifacts/kaye-flooring/public/favicon.ico               | Bin 0 -> 14458 bytes
+ artifacts/kaye-flooring/src/components/layout/Navbar.tsx |   2 +-
+ artifacts/kaye-flooring/src/pages/About.tsx              |   2 +-
+ artifacts/kaye-flooring/src/pages/Contact.tsx            | 133 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+ artifacts/kaye-flooring/src/pages/Gallery.tsx            |   2 +-
+ artifacts/kaye-flooring/src/pages/Home.tsx               |   4 ++--
+ artifacts/kaye-flooring/src/pages/Services.tsx           |   4 ++--
+ artifacts/kaye-flooring/src/pages/Testimonials.tsx       |   2 +-
+ attached_assets/image_1784988989680.png                  | Bin 0 -> 4094 bytes
+ attached_assets/image_1784989689230.png                  | Bin 0 -> 35135 bytes
+ pnpm-lock.yaml                                           |  19 ++++++++++++++++++
+ 16 files changed, 222 insertions(+), 37 deletions(-)
+ create mode 100644 artifacts/api-server/src/routes/contact.ts
+ create mode 100644 artifacts/kaye-flooring/public/apple-touch-icon.png
+ create mode 100644 artifacts/kaye-flooring/public/favicon.ico
+ create mode 100644 attached_assets/image_1784988989680.png
+ create mode 100644 attached_assets/image_1784989689230.png
+administrator@vps-BLOUD-Soft:~/apps/kayeflooring$ pnpm install
+Scope: all 9 workspace projects
+Lockfile is up to date, resolution step is skipped
+Packages: +2
+++
+Progress: resolved 2, reused 0, downloaded 2, added 2, done
+. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+└─ Done in 19ms
+Done in 4.1s using pnpm v10.34.5
+administrator@vps-BLOUD-Soft:~/apps/kayeflooring$ pnpm build
+
+> workspace@0.0.0 build /home/administrator/apps/kayeflooring
+> pnpm run typecheck && pnpm -r --if-present run build
+
+
+> workspace@0.0.0 typecheck /home/administrator/apps/kayeflooring
+> pnpm run typecheck:libs && pnpm -r --filter "./artifacts/**" --filter "./scripts" --if-present run typecheck
+
+
+> workspace@0.0.0 typecheck:libs /home/administrator/apps/kayeflooring
+> tsc --build
+
+Scope: 4 of 9 workspace projects
+artifacts/api-server typecheck$ tsc -p tsconfig.json --noEmit
+└─ Done in 4s
+artifacts/kaye-flooring typecheck$ tsc -p tsconfig.json --noEmit
+│ src/pages/Home.tsx(49,27): error TS2322: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' …
+│   Property 'visible' is incompatible with index signature.
+│     Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+│       Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+│         Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: R…
+│           Types of property 'transition' are incompatible.
+│             Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+│               Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+│                 Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+│                   Types of property 'ease' are incompatible.
+│                     Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+│ src/pages/Home.tsx(52,26): error TS2322: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' …
+│   Property 'visible' is incompatible with index signature.
+│     Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+│       Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+│         Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: R…
+│           Types of property 'transition' are incompatible.
+│             Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+│               Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+│                 Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+│                   Types of property 'ease' are incompatible.
+│                     Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+│ src/pages/Home.tsx(55,25): error TS2322: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' …
+│   Property 'visible' is incompatible with index signature.
+│     Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+│       Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+│         Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: R…
+│           Types of property 'transition' are incompatible.
+│             Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+│               Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+│                 Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+│                   Types of property 'ease' are incompatible.
+│                     Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+│ src/pages/Home.tsx(58,27): error TS2322: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' …
+│   Property 'visible' is incompatible with index signature.
+│     Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+│       Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+│         Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: R…
+│           Types of property 'transition' are incompatible.
+│             Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+│               Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+│                 Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+│                   Types of property 'ease' are incompatible.
+│                     Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+│ src/pages/Home.tsx(80,98): error TS2322: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' …
+│   Property 'visible' is incompatible with index signature.
+│     Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+│       Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+│         Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: R…
+│           Types of property 'transition' are incompatible.
+│             Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+│               Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+│                 Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+│                   Types of property 'ease' are incompatible.
+│                     Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+│ src/pages/Home.tsx(88,98): error TS2322: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' …
+│   Property 'visible' is incompatible with index signature.
+│     Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+│       Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+│         Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: R…
+│           Types of property 'transition' are incompatible.
+│             Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+│               Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+│                 Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+│                   Types of property 'ease' are incompatible.
+│                     Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+│ src/pages/Home.tsx(98,98): error TS2322: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' …
+│   Property 'visible' is incompatible with index signature.
+│     Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+│       Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+│         Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: R…
+│           Types of property 'transition' are incompatible.
+│             Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+│               Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+│                 Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+│                   Types of property 'ease' are incompatible.
+│                     Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+└─ Failed in 15.4s at /home/administrator/apps/kayeflooring/artifacts/kaye-flooring
+artifacts/mockup-sandbox typecheck$ tsc -p tsconfig.json --noEmit
+└─ Done in 14.3s
+scripts typecheck$ tsc -p tsconfig.json --noEmit
+└─ Done in 2.7s
+/home/administrator/apps/kayeflooring/artifacts/kaye-flooring:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/kaye-flooring@0.0.0 typecheck: `tsc -p tsconfig.json --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.
+ ELIFECYCLE  Command failed with exit code 2.
