@@ -28,7 +28,8 @@ router.post("/contact", async (req, res) => {
   const transporter = nodemailer.createTransport({
     host: smtpHost,
     port: smtpPort,
-    secure: smtpPort === 465,
+    secure: smtpPort === 465,   // true for 465 (SSL), false for 587 (STARTTLS)
+    requireTLS: smtpPort !== 465, // SMTP2GO: enforce STARTTLS on 587/2525
     auth: { user: smtpUser, pass: smtpPass },
   });
 
