@@ -39,13 +39,21 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
           <div className="flex items-center cursor-pointer group">
-            <div className="bg-black/55 backdrop-blur-sm rounded px-2 py-1 md:px-3 md:py-2">
+            <motion.div
+              initial={{ scale: 2, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                scale: { type: "spring", stiffness: 280, damping: 22 },
+                opacity: { duration: 0.25 }
+              }}
+              className="bg-black/55 backdrop-blur-sm rounded px-1.5 py-0.5 md:px-3 md:py-2 origin-top-left"
+            >
               <img
                 src="/kaye-flooring-logo.png"
                 alt="Kaye Flooring Inc."
-                className="h-12 md:h-36 w-auto object-contain transition-opacity group-hover:opacity-90"
+                className="h-14 md:h-36 w-auto object-contain transition-opacity group-hover:opacity-90"
               />
-            </div>
+            </motion.div>
           </div>
         </Link>
 
