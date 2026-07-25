@@ -11,6 +11,16 @@ _Replace the heading above with the project's name, and this line with one sente
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - Required env: `DATABASE_URL` — Postgres connection string
 
+## VPS Deploy
+
+Run once from the repo root on the VPS to pull, install, build, and fix permissions in one step:
+
+```bash
+bash scripts/deploy.sh
+```
+
+The script exits immediately on any error and prints a ✔/✘ status after each step. After it completes, restart your process manager (e.g. `pm2 restart all`).
+
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
