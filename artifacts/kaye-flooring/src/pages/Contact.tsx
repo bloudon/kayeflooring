@@ -133,7 +133,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Phone</p>
-                    <a href="tel:4075550100" className="text-muted-foreground hover:text-primary transition-colors">(407) 555-0100</a>
+                    <a href="tel:3529884006" className="text-muted-foreground hover:text-primary transition-colors">(352) 988-4006</a>
                   </div>
                 </div>
 
@@ -143,7 +143,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Email</p>
-                    <a href="mailto:info@kayeflooring.com" className="text-muted-foreground hover:text-primary transition-colors">info@kayeflooring.com</a>
+                    <a href="mailto:kayeflooring@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">kayeflooring@gmail.com</a>
                   </div>
                 </div>
 

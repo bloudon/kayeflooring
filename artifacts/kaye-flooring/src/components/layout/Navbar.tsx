@@ -129,9 +129,9 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="pt-4 flex flex-col gap-4">
-                <a href="tel:4075550100" className="flex items-center gap-2 text-muted-foreground">
+                <a href="tel:3529884006" className="flex items-center gap-2 text-muted-foreground">
                   <Phone size={18} />
-                  <span>(407) 555-0100</span>
+                  <span>(352) 988-4006</span>
                 </a>
                 <Link href="/contact">
                   <Button className="w-full rounded-none" onClick={() => setIsOpen(false)}>

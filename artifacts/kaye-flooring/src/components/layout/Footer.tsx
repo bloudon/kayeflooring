@@ -81,11 +81,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-white/70 text-sm">
                 <Phone size={18} className="text-primary shrink-0" />
-                <a href="tel:4075550100" className="hover:text-white transition-colors">(407) 555-0100</a>
+                <a href="tel:3529884006" className="hover:text-white transition-colors">(352) 988-4006</a>
               </li>
               <li className="flex items-center gap-3 text-white/70 text-sm">
                 <Mail size={18} className="text-primary shrink-0" />
-                <a href="mailto:info@kayeflooring.com" className="hover:text-white transition-colors">info@kayeflooring.com</a>
+                <a href="mailto:kayeflooring@gmail.com" className="hover:text-white transition-colors">kayeflooring@gmail.com</a>
               </li>
             </ul>
             
