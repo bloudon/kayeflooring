@@ -39,11 +39,11 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
           <div className="flex items-center cursor-pointer group">
-            <div className="bg-black/55 backdrop-blur-sm rounded px-3 py-2">
+            <div className="bg-black/55 backdrop-blur-sm rounded px-2 py-1 md:px-3 md:py-2">
               <img
                 src="/kaye-flooring-logo.png"
                 alt="Kaye Flooring Inc."
-                className="h-36 w-auto object-contain transition-opacity group-hover:opacity-90"
+                className="h-12 md:h-36 w-auto object-contain transition-opacity group-hover:opacity-90"
               />
             </div>
           </div>
