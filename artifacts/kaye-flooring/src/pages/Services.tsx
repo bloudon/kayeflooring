@@ -101,7 +101,7 @@ export default function Services() {
                   </ul>
 
                   <div className="pt-6">
-                    <Link href="/contact">
+                    <Link href={`/contact?ref=service-${service.id}`}>
                       <Button variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-white transition-colors">
                         Request Quote for {service.title}
                       </Button>
@@ -123,7 +123,7 @@ export default function Services() {
           <div className="relative z-10 max-w-2xl mx-auto">
             <h3 className="text-3xl font-serif font-bold text-white mb-4">Don't see what you're looking for?</h3>
             <p className="text-white/80 mb-8">We also handle subfloor repair, baseboard installation, demolition of existing flooring, and transition molding custom fabrication.</p>
-            <Link href="/contact">
+            <Link href="/contact?ref=custom-project">
               <Button size="lg" className="rounded-none bg-white text-primary hover:bg-white/90">
                 Discuss Your Custom Project <ArrowRight size={18} className="ml-2" />
               </Button>

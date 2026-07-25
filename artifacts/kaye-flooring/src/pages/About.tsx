@@ -70,7 +70,7 @@ export default function About() {
             </div>
 
             <div className="pt-8">
-              <Link href="/contact">
+              <Link href="/contact?ref=about">
                 <Button size="lg" className="rounded-none shadow-lg">
                   Work With Us
                 </Button>

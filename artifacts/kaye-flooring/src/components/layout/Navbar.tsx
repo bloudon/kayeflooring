@@ -83,7 +83,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <Link href="/contact">
+          <Link href="/contact?ref=navbar">
             <Button className={cn(
               "rounded-none shadow-none font-medium transition-all",
               !scrolled && location === "/" ? "bg-white text-primary hover:bg-white/90" : ""

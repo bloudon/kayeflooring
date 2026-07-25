@@ -69,7 +69,7 @@ export default function Gallery() {
           className="mt-20 text-center"
         >
           <p className="text-xl font-serif mb-6">Inspired to start your own project?</p>
-          <Link href="/contact">
+          <Link href="/contact?ref=gallery">
             <Button size="lg" className="rounded-none px-8">
               Get Your Free Estimate
             </Button>

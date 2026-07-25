@@ -56,7 +56,7 @@ export default function Home() {
                 Specializing in premium hardwood, custom stairs, and luxury vinyl plank. We bring precision and care to every room in your home.
               </motion.p>
               <motion.div variants={FADE_UP} className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <Link href="/contact">
+                <Link href="/contact?ref=hero">
                   <Button size="lg" className="rounded-none text-base h-14 px-8 shadow-xl hover:scale-105 transition-transform duration-300">
                     Get Your Free Estimate
                   </Button>
@@ -221,7 +221,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Ready to upgrade your home?</h2>
           <p className="text-muted-foreground text-lg mb-10">Contact us today for a free, no-pressure estimate. We'll bring samples to your home and discuss the best options for your space.</p>
-          <Link href="/contact">
+          <Link href="/contact?ref=home-cta">
             <Button size="lg" className="rounded-none h-14 px-10 text-base shadow-xl">
               Get Your Free Estimate
             </Button>

@@ -106,7 +106,7 @@ export default function Testimonials() {
         >
           <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Ready to be our next success story?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">Contact us today to schedule your free in-home consultation and estimate.</p>
-          <Link href="/contact">
+          <Link href="/contact?ref=testimonials">
             <Button size="lg" className="rounded-none shadow-xl px-10">
               Get Started
             </Button>
