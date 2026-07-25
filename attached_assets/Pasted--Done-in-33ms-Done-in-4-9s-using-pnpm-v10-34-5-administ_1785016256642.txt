@@ -1,0 +1,43 @@
+└─ Done in 33ms
+Done in 4.9s using pnpm v10.34.5
+administrator@vps-BLOUD-Soft:~/apps/kayeflooring$ pnpm build
+
+> workspace@0.0.0 build /home/administrator/apps/kayeflooring
+> pnpm run typecheck && pnpm -r --if-present run build
+
+
+> workspace@0.0.0 typecheck /home/administrator/apps/kayeflooring
+> pnpm run typecheck:libs && pnpm -r --filter "./artifacts/**" --filter "./scripts" --if-present run typecheck
+
+
+> workspace@0.0.0 typecheck:libs /home/administrator/apps/kayeflooring
+> tsc --build
+
+Scope: 4 of 9 workspace projects
+artifacts/api-server typecheck$ tsc -p tsconfig.json --noEmit
+└─ Done in 4.1s
+artifacts/kaye-flooring typecheck$ tsc -p tsconfig.json --noEmit
+└─ Done in 19.5s
+artifacts/mockup-sandbox typecheck$ tsc -p tsconfig.json --noEmit
+└─ Done in 8.2s
+scripts typecheck$ tsc -p tsconfig.json --noEmit
+└─ Done in 3.6s
+Scope: 8 of 9 workspace projects
+artifacts/mockup-sandbox build$ vite build
+│ failed to load config from /home/administrator/apps/kayeflooring/artifacts/mockup-sandbox/vite.config.ts
+│ error during build:
+│ Error: PORT environment variable is required but was not provided.
+│     at file:///home/administrator/apps/kayeflooring/artifacts/mockup-sandbox/node_modules/.vite-temp/vite.config.ts.timestamp-1785016227590-32702afb9c024.mjs:145:9
+│     at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+│     at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+│     at async loadConfigFromBundledFile (file:///home/administrator/apps/kayeflooring/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9…
+│     at async bundleAndLoadConfigFile (file:///home/administrator/apps/kayeflooring/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0…
+│     at async loadConfigFromFile (file:///home/administrator/apps/kayeflooring/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node…
+│     at async resolveConfig (file:///home/administrator/apps/kayeflooring/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_modu…
+│     at async createBuilder (file:///home/administrator/apps/kayeflooring/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_modu…
+│     at async CAC.<anonymous> (file:///home/administrator/apps/kayeflooring/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_mo…
+└─ Failed in 972ms at /home/administrator/apps/kayeflooring/artifacts/mockup-sandbox
+/home/administrator/apps/kayeflooring/artifacts/mockup-sandbox:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/mockup-sandbox@2.0.0 build: `vite build`
+Exit status 1
+ ELIFECYCLE  Command failed with exit code 1.
