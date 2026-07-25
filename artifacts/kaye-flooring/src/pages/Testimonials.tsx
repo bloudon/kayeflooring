@@ -8,42 +8,42 @@ const GOOGLE_REVIEW_URL = "https://g.page/r/CbI2aQ6FKayeFlooring/review";
 const reviews = [
   {
     name: "Sarah Jenkins",
-    location: "Ormond Beach, FL",
+    location: "Clermont, FL",
     project: "Solid Hardwood Installation",
     text: "Gerrit and his team transformed our downstairs living area. The attention to detail around our stone fireplace was incredible. They showed up when they said they would, kept the house clean, and the final result is stunning. Worth every penny.",
     rating: 5
   },
   {
     name: "Michael Torres",
-    location: "Port Orange, FL",
+    location: "Winter Garden, FL",
     project: "Custom Stairs & LVP",
     text: "We had ugly carpet on our stairs that Gerrit replaced with custom stained wood treads to match our new LVP floors. The craftsmanship is flawless. It completely changed the look of our entryway. Highly professional from start to finish.",
     rating: 5
   },
   {
     name: "David & Linda Vance",
-    location: "New Smyrna Beach, FL",
+    location: "Ocala, FL",
     project: "Engineered Hardwood",
-    text: "After a terrible experience with a big box store contractor, we found Kaye Flooring. The difference is night and day. Nick leveled our uneven concrete slab before installing the engineered wood, which the previous guys didn't even mention. The floor feels solid and looks beautiful.",
+    text: "After a terrible experience with a big box store contractor, we found Kaye Flooring. The difference is night and day. Gerrit leveled our uneven concrete slab before installing the engineered wood, which the previous guys didn't even mention. The floor feels solid and looks beautiful.",
     rating: 5
   },
   {
     name: "Amanda Clark",
-    location: "Daytona Beach, FL",
+    location: "Mount Dora, FL",
     project: "Luxury Vinyl Plank",
-    text: "I wanted durable floors for my dogs but didn't want it to look cheap. Nick brought samples to the house, helped me pick a beautiful LVP, and installed it flawlessly. The transitions between rooms are seamless. Outstanding work.",
+    text: "I wanted durable floors for my dogs but didn't want it to look cheap. Gerrit brought samples to the house, helped me pick a beautiful LVP, and installed it flawlessly. The transitions between rooms are seamless. Outstanding work.",
     rating: 5
   },
   {
     name: "Robert Hughes",
-    location: "Ponce Inlet, FL",
+    location: "Apopka, FL",
     project: "Whole House Flooring",
     text: "Communication was excellent throughout the entire two-week project. They moved furniture carefully, managed dust extremely well, and the baseboard work was the cherry on top. A true master of his craft.",
     rating: 5
   },
   {
     name: "Elena Rostova",
-    location: "Deland, FL",
+    location: "Leesburg, FL",
     project: "Staircase Renovation",
     text: "The stairs are a work of art. Period. I couldn't be happier with Kaye Flooring. If you want it done right, this is the company to hire.",
     rating: 5

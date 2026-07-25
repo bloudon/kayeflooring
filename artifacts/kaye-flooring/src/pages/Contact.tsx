@@ -153,8 +153,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Service Area</p>
-                    <p className="text-muted-foreground">Port Orange, FL</p>
-                    <p className="text-muted-foreground text-sm">Serving Volusia County & Central Florida</p>
+                    <p className="text-muted-foreground text-sm">Lake, Marion &amp; Orange Counties</p>
                   </div>
                 </div>
 

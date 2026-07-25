@@ -65,7 +65,7 @@ export default function About() {
               </div>
               <div>
                 <h4 className="font-bold text-xl text-foreground mb-2">Local</h4>
-                <p className="text-sm text-muted-foreground">Based in Port Orange, serving Volusia County and surrounding areas.</p>
+                <p className="text-sm text-muted-foreground">Locally owned and operated, serving Lake, Marion &amp; Orange Counties.</p>
               </div>
             </div>
 

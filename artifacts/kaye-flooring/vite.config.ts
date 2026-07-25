@@ -59,6 +59,9 @@ export default defineConfig({
     },
     dedupe: ['react', 'react-dom'],
   },
+  optimizeDeps: {
+    include: ['react-simple-maps'],
+  },
   root: path.resolve(import.meta.dirname),
   build: {
     outDir: path.resolve(import.meta.dirname, 'dist/public'),
