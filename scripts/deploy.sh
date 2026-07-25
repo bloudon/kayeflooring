@@ -58,7 +58,9 @@ ok "Dependencies installed"
 
 # ── step 3: pnpm build ───────────────────────────────────────────────────────
 info "Step 3/4 · Building all packages…"
-pnpm run build || fail "Build failed — check the error output above"
+# Exclude mockup-sandbox — it's a Replit-only design tool and requires a live PORT at build time
+pnpm run typecheck && pnpm -r --filter '!@workspace/mockup-sandbox' --if-present run build \
+  || fail "Build failed — check the error output above"
 ok "Build complete"
 
 # ── step 4: permission fix ────────────────────────────────────────────────────
