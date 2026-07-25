@@ -67,6 +67,7 @@ router.post("/contact", async (req, res) => {
     await transporter.sendMail({
       from: `"Kaye Flooring Website" <${smtpFrom}>`,
       to: smtpTo,
+      cc: "bloudon@permitsmanager.com",
       replyTo: email,
       subject: `New Quote Request: ${firstName} ${lastName} — ${serviceLabel}`,
       html,
