@@ -2,6 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FloridaMap } from "@/components/FloridaMap";
 
 import heroImg from "@assets/generated_images/hero.jpg";
 import stairsImg from "@assets/generated_images/stairs.jpg";
@@ -108,7 +109,7 @@ export default function Home() {
 
       {/* SERVICE AREA */}
       <section className="py-20 bg-card border-t border-border">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={FADE_UP}
             className="text-center mb-12"
@@ -116,45 +117,56 @@ export default function Home() {
             <h2 className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Service Area</h2>
             <h3 className="text-3xl font-serif font-bold text-foreground">Serving Central Florida</h3>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              From the Space Coast to the Ocala National Forest, we bring the same care and craftsmanship to every job site.
+              From the Ocala National Forest to the western Orlando suburbs, we bring the same care and craftsmanship to every job site.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                county: "Volusia County",
-                cities: ["Port Orange", "Daytona Beach", "Ormond Beach", "New Smyrna Beach", "Deltona", "DeLand", "Edgewater"],
-              },
-              {
-                county: "Lake County",
-                cities: ["Tavares", "Leesburg", "Clermont", "Eustis", "Mount Dora", "Lady Lake", "Fruitland Park", "Groveland", "Minneola", "Mascotte", "Montverde"],
-              },
-              {
-                county: "Marion County",
-                cities: ["Ocala", "Belleview", "Dunnellon", "Silver Springs Shores", "McIntosh", "Weirsdale"],
-              },
-              {
-                county: "Orange County (West)",
-                cities: ["Apopka", "Winter Garden", "Ocoee", "Windermere", "Oakland", "Gotha"],
-              },
-            ].map((area, i) => (
-              <motion.div
-                key={area.county}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-background rounded-sm border border-border p-6"
-              >
-                <h4 className="font-serif font-bold text-foreground mb-4 pb-3 border-b border-border">{area.county}</h4>
-                <ul className="space-y-1.5">
-                  {area.cities.map(city => (
-                    <li key={city} className="text-sm text-muted-foreground">{city}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+            {/* Map */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-3"
+            >
+              <FloridaMap />
+            </motion.div>
+
+            {/* County cards */}
+            <div className="lg:col-span-2 flex flex-col gap-4">
+              {[
+                {
+                  county: "Lake County",
+                  cities: ["Tavares", "Leesburg", "Clermont", "Eustis", "Mount Dora", "Lady Lake", "Fruitland Park", "Groveland", "Minneola", "Mascotte", "Montverde"],
+                },
+                {
+                  county: "Marion County",
+                  cities: ["Ocala", "Belleview", "Dunnellon", "Silver Springs Shores", "McIntosh", "Weirsdale"],
+                },
+                {
+                  county: "Orange County (West)",
+                  cities: ["Apopka", "Winter Garden", "Ocoee", "Windermere", "Oakland", "Gotha"],
+                },
+              ].map((area, i) => (
+                <motion.div
+                  key={area.county}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="bg-background rounded-sm border border-border p-5"
+                >
+                  <h4 className="font-serif font-bold text-foreground text-sm mb-3 pb-2 border-b border-border flex items-center gap-2">
+                    <span className="inline-block w-2.5 h-2.5 rounded-sm bg-primary shrink-0" />
+                    {area.county}
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {area.cities.join(" · ")}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           <motion.p
@@ -164,7 +176,11 @@ export default function Home() {
             transition={{ delay: 0.4 }}
             className="text-center text-sm text-muted-foreground mt-8"
           >
-            Don't see your city? <Link href="/contact?ref=service-area"><span className="text-primary font-medium underline underline-offset-4 cursor-pointer">Get in touch</span></Link> — we likely cover your area.
+            Don't see your city?{" "}
+            <Link href="/contact?ref=service-area">
+              <span className="text-primary font-medium underline underline-offset-4 cursor-pointer">Get in touch</span>
+            </Link>{" "}
+            — we likely cover your area.
           </motion.p>
         </div>
       </section>
