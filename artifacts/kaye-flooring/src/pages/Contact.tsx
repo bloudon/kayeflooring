@@ -74,6 +74,13 @@ export default function Contact() {
         description: "Thank you! We'll be in touch within 24 hours to discuss your project.",
       });
 
+      // Fire GA4 conversion event
+      if (typeof gtag !== "undefined") {
+        gtag("event", "generate_lead", {
+          source: ref || "direct",
+        });
+      }
+
       setFormData({ firstName: "", lastName: "", email: "", phone: "", service: preselectedService, message: "" });
     } catch (err) {
       toast({
