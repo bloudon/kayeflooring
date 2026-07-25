@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,12 +9,12 @@ import lvpImg from "@assets/generated_images/lvp.jpg";
 import solidImg from "@assets/generated_images/solid.jpg";
 import ownerImg from "@assets/generated_images/about-owner.jpg";
 
-const FADE_UP = {
+const FADE_UP: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-const STAGGER = {
+const STAGGER: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
