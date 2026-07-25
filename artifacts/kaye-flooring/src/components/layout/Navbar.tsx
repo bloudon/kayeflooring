@@ -46,7 +46,7 @@ export function Navbar() {
                 scale: { type: "spring", stiffness: 120, damping: 18 },
                 opacity: { duration: 0.4 }
               }}
-              className="bg-black/55 backdrop-blur-sm rounded px-1.5 py-0.5 md:px-3 md:py-2 origin-top-left"
+              className="bg-black/55 backdrop-blur-sm rounded p-[3px] md:px-3 md:py-2 origin-top-left"
             >
               <img
                 src="/kaye-flooring-logo.png"
