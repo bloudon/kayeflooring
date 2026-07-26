@@ -22,8 +22,8 @@ timeoutMs = 20000
 [userenv]
 
 [userenv.shared]
-SMTP_FROM = "noreply@kayeflooring.com"
+SMTP_FROM = "info@kayeflooring.com"
 SMTP_HOST = "mail.smtp2go.com"
 SMTP_PORT = "587"
 SMTP_TO = "kayeflooring@gmail.com"
-SMTP_USER = "kayeflooring.com"
+SMTP_USER = "info@kayeflooring.com"
