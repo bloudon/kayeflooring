@@ -188,6 +188,36 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="lg:col-span-2"
           >
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="bg-card p-10 md:p-14 rounded-sm shadow-xl border border-border text-center flex flex-col items-center gap-6"
+              >
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg className="text-primary" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <h2 className="text-3xl font-serif font-bold text-foreground mb-3">Request Received!</h2>
+                  <p className="text-muted-foreground max-w-md mx-auto leading-relaxed">
+                    Thanks for reaching out. Gerrit will follow up within 24 hours to discuss your project and schedule a free in-home consultation.
+                  </p>
+                </div>
+                <div className="border-t border-border w-full pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <div className="flex gap-0.5 text-yellow-500">
+                    {[1,2,3,4,5].map(i => <Star key={i} size={16} fill="currentColor" />)}
+                  </div>
+                  <p className="text-sm text-muted-foreground">Happy with a past job? A quick Google review helps your neighbors find us.</p>
+                  <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="sm" className="rounded-none gap-2 whitespace-nowrap shrink-0">
+                      <ExternalLink size={14} />
+                      Leave a Review
+                    </Button>
+                  </a>
+                </div>
+              </motion.div>
+            ) : (
             <form onSubmit={handleSubmit} className="bg-card p-8 md:p-10 rounded-sm shadow-xl border border-border">
 
               {/* Lead source badge */}
@@ -262,27 +292,6 @@ export default function Contact() {
               </Button>
             </form>
 
-            {submitted && (
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="mt-6 bg-card border border-border rounded-sm p-6 shadow-sm flex flex-col sm:flex-row items-center gap-5"
-              >
-                <div className="flex gap-0.5 text-yellow-500 shrink-0">
-                  {[1,2,3,4,5].map(i => <Star key={i} size={18} fill="currentColor" />)}
-                </div>
-                <div className="flex-1 text-center sm:text-left">
-                  <p className="font-semibold text-foreground text-sm">Had a great experience with us?</p>
-                  <p className="text-muted-foreground text-sm mt-0.5">Leave a quick Google review — it only takes a minute and helps other homeowners find us.</p>
-                </div>
-                <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="shrink-0">
-                  <Button variant="outline" size="sm" className="rounded-none gap-2 whitespace-nowrap">
-                    <ExternalLink size={14} />
-                    Leave a Review
-                  </Button>
-                </a>
-              </motion.div>
             )}
           </motion.div>
 
