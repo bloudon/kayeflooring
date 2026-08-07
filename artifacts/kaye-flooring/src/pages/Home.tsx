@@ -162,14 +162,20 @@ export default function Home() {
                 {
                   county: "Lake County",
                   cities: ["Tavares", "Leesburg", "Clermont", "Eustis", "Mount Dora", "Lady Lake", "Fruitland Park", "Groveland", "Minneola", "Mascotte", "Montverde"],
+                  link: "/clermont",
+                  linkLabel: "View Clermont flooring page",
                 },
                 {
                   county: "Marion County",
                   cities: ["Ocala", "Belleview", "Dunnellon", "Silver Springs Shores", "McIntosh", "Weirsdale"],
+                  link: "/ocala",
+                  linkLabel: "View Ocala flooring page",
                 },
                 {
                   county: "Orange County (West)",
                   cities: ["Apopka", "Winter Garden", "Ocoee", "Windermere", "Oakland", "Gotha"],
+                  link: "/apopka",
+                  linkLabel: "View Apopka flooring page",
                 },
               ].map((area, i) => (
                 <motion.div
@@ -187,6 +193,11 @@ export default function Home() {
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {area.cities.join(" · ")}
                   </p>
+                  <Link href={area.link}>
+                    <span className="inline-block mt-3 text-[11px] font-bold uppercase tracking-wider text-primary underline underline-offset-4 cursor-pointer hover:text-foreground transition-colors">
+                      {area.linkLabel} →
+                    </span>
+                  </Link>
                 </motion.div>
               ))}
             </div>

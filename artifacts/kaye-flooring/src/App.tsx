@@ -16,6 +16,9 @@ import TheVillages from '@/pages/TheVillages';
 import Admin from '@/pages/Admin';
 import NotFound from '@/pages/not-found';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
+import Ocala from '@/pages/Ocala';
+import Clermont from '@/pages/Clermont';
+import Apopka from '@/pages/Apopka';
 
 const queryClient = new QueryClient();
 
@@ -40,6 +43,9 @@ function Router() {
                 <Route path="/testimonials" component={Testimonials} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/villages-fl-flooring-installation" component={TheVillages} />
+                <Route path="/ocala" component={Ocala} />
+                <Route path="/clermont" component={Clermont} />
+                <Route path="/apopka" component={Apopka} />
                 <Route component={NotFound} />
               </Switch>
             </main>
