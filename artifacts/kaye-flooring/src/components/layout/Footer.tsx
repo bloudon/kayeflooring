@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-foreground text-primary-foreground py-16">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-8">
           
           <div className="md:col-span-1 space-y-4">
             <div className="mb-6">
@@ -67,6 +67,32 @@ export function Footer() {
               <li>
                 <Link href="/contact">
                   <span className="text-white/70 hover:text-white transition-colors cursor-pointer text-sm">Contact</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-serif text-lg font-bold text-white mb-6">Service Areas</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/villages-fl-flooring-installation">
+                  <span className="text-white/70 hover:text-white transition-colors cursor-pointer text-sm">The Villages</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/ocala">
+                  <span className="text-white/70 hover:text-white transition-colors cursor-pointer text-sm">Ocala</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/clermont">
+                  <span className="text-white/70 hover:text-white transition-colors cursor-pointer text-sm">Clermont</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/apopka">
+                  <span className="text-white/70 hover:text-white transition-colors cursor-pointer text-sm">Apopka</span>
                 </Link>
               </li>
             </ul>
