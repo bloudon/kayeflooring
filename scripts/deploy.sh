@@ -38,6 +38,35 @@ echo ""
 info "=== Kaye Flooring — VPS Deploy ==="
 echo ""
 
+# ── uploads-dir safety check ─────────────────────────────────────────────────
+# Gallery photos are stored in UPLOADS_DIR (set in ecosystem.config.cjs or the
+# shell environment).  If that variable is not set, the API server falls back to
+# artifacts/api-server/uploads/ inside the repo — a directory that could be
+# wiped by a clean checkout or never backed up.  Warn loudly so Gerrit notices.
+REPO_ROOT="$(pwd)"
+if [ -z "${UPLOADS_DIR:-}" ]; then
+  echo -e "${YELLOW}⚠  WARNING: UPLOADS_DIR is not set.${NC}"
+  echo -e "${YELLOW}   Uploaded gallery photos will be stored inside the repo at:${NC}"
+  echo -e "${YELLOW}   ${REPO_ROOT}/artifacts/api-server/uploads/${NC}"
+  echo -e "${YELLOW}   These files are NOT committed to git and could be lost on a${NC}"
+  echo -e "${YELLOW}   clean checkout or if the repo directory is removed.${NC}"
+  echo -e "${YELLOW}   Set UPLOADS_DIR to a path outside the repo before the first upload,${NC}"
+  echo -e "${YELLOW}   e.g. in ecosystem.config.cjs:  UPLOADS_DIR: '/home/administrator/kaye-uploads'${NC}"
+  echo ""
+else
+  # Warn if UPLOADS_DIR is set to something inside the repo root
+  case "$UPLOADS_DIR" in
+    "$REPO_ROOT"*) 
+      echo -e "${YELLOW}⚠  WARNING: UPLOADS_DIR is set to a path inside the repo (${UPLOADS_DIR}).${NC}"
+      echo -e "${YELLOW}   Move it outside the repo to avoid losing photos on re-deploy.${NC}"
+      echo ""
+      ;;
+    *)
+      ok "UPLOADS_DIR is set to: ${UPLOADS_DIR}"
+      ;;
+  esac
+fi
+
 # ── build-time env vars ───────────────────────────────────────────────────────
 # Vite reads PORT and BASE_PATH at config-load time, even during `vite build`.
 # Export safe production defaults so the build works in a clean shell.

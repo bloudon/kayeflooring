@@ -23,6 +23,11 @@ module.exports = {
       env: {
         NODE_ENV: "production",
         PORT: "8080",
+        // IMPORTANT: Set UPLOADS_DIR to a folder OUTSIDE the repo so that gallery
+        // photos survive git pulls and re-deploys.  Create the folder first:
+        //   mkdir -p /home/administrator/kaye-uploads
+        // then uncomment the line below:
+        // UPLOADS_DIR: "/home/administrator/kaye-uploads",
         // SMTP — replace SMTP_PASS with your real SMTP2GO password
         SMTP_HOST: "mail.smtp2go.com",
         SMTP_PORT: "587",
