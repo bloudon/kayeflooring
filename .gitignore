@@ -47,3 +47,8 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Uploaded gallery photos — keep outside the repo on VPS (set UPLOADS_DIR)
+# This folder is the fallback when UPLOADS_DIR is not set; exclude it so
+# photos are never accidentally committed or wiped by a clean checkout.
+artifacts/api-server/uploads/
