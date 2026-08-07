@@ -9,9 +9,10 @@ const FL_PREFIX = "12";
 
 // Service counties: FIPS → display info
 const SERVICE_COUNTIES: Record<string, { name: string; cities: string[] }> = {
-  "12069": { name: "Lake County",   cities: ["Clermont", "Leesburg", "Mount Dora", "Eustis"] },
-  "12083": { name: "Marion County", cities: ["Ocala", "Belleview", "Dunnellon"] },
+  "12069": { name: "Lake County",    cities: ["Lady Lake", "Leesburg", "Mount Dora", "Clermont"] },
+  "12083": { name: "Marion County",  cities: ["Ocala", "Belleview", "Dunnellon"] },
   "12095": { name: "Orange County (West)", cities: ["Apopka", "Winter Garden", "Ocoee"] },
+  "12119": { name: "Sumter County — The Villages", cities: ["Wildwood", "Oxford", "Lady Lake", "Coleman"] },
 };
 
 interface Tip { x: number; y: number; name: string; cities: string[] }

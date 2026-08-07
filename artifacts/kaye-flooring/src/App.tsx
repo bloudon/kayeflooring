@@ -12,6 +12,7 @@ import Gallery from '@/pages/Gallery';
 import About from '@/pages/About';
 import Testimonials from '@/pages/Testimonials';
 import Contact from '@/pages/Contact';
+import TheVillages from '@/pages/TheVillages';
 import NotFound from '@/pages/not-found';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
 
@@ -30,6 +31,7 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/testimonials" component={Testimonials} />
           <Route path="/contact" component={Contact} />
+          <Route path="/the-villages" component={TheVillages} />
           <Route component={NotFound} />
         </Switch>
       </main>

@@ -117,7 +117,7 @@ export default function Home() {
             <h2 className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Service Area</h2>
             <h3 className="text-3xl font-serif font-bold text-foreground">Serving Central Florida</h3>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              From the Ocala National Forest to the western Orlando suburbs, we bring the same care and craftsmanship to every job site.
+              From The Villages and Ocala to the western Orlando suburbs — we bring the same precision and care to every job site.
             </p>
           </motion.div>
 
@@ -135,6 +135,29 @@ export default function Home() {
 
             {/* County cards */}
             <div className="lg:col-span-2 flex flex-col gap-4">
+              {/* Featured: The Villages */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-primary text-primary-foreground rounded-sm border border-primary p-5"
+              >
+                <h4 className="font-serif font-bold text-sm mb-1 pb-2 border-b border-primary-foreground/20 flex items-center gap-2">
+                  <span className="inline-block w-2.5 h-2.5 rounded-sm bg-primary-foreground shrink-0" />
+                  The Villages
+                  <span className="ml-auto text-[10px] font-normal uppercase tracking-widest opacity-70">Featured Area</span>
+                </h4>
+                <p className="text-xs text-primary-foreground/75 leading-relaxed mt-2">
+                  Lady Lake · Wildwood · Oxford · Fruitland Park · Coleman · Lake Panasoffkee
+                </p>
+                <Link href="/the-villages">
+                  <span className="inline-block mt-3 text-[11px] font-bold uppercase tracking-wider text-primary-foreground/90 underline underline-offset-4 cursor-pointer hover:text-primary-foreground transition-colors">
+                    View Villages flooring page →
+                  </span>
+                </Link>
+              </motion.div>
+
               {[
                 {
                   county: "Lake County",
