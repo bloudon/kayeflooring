@@ -14,10 +14,25 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
+// Pages with a full-bleed dark photo hero — navbar can start transparent + white text
+const DARK_HERO_PATHS = new Set([
+  "/",
+  "/villages-fl-flooring-installation",
+  "/ocala",
+  "/clermont",
+  "/apopka",
+  "/lady-lake",
+  "/leesburg",
+]);
+
 export function Navbar() {
   const [location, setLocation] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Force the "scrolled" (dark) style on pages without a dark hero background
+  const hasDarkHero = DARK_HERO_PATHS.has(location);
+  const useDarkStyle = scrolled || !hasDarkHero;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +46,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b border-transparent",
-        scrolled 
+        useDarkStyle
           ? "bg-background/95 backdrop-blur-md border-border py-3 shadow-sm" 
           : "bg-transparent py-5"
       )}
@@ -66,8 +81,8 @@ export function Navbar() {
                   <span className={cn(
                     "text-sm font-medium transition-colors hover:text-primary cursor-pointer relative group",
                     location === link.href 
-                      ? (scrolled ? "text-primary" : "text-white") 
-                      : (scrolled ? "text-muted-foreground" : "text-white/80 hover:text-white")
+                      ? (useDarkStyle ? "text-primary" : "text-white") 
+                      : (useDarkStyle ? "text-muted-foreground" : "text-white/80 hover:text-white")
                   )}>
                     {link.name}
                     {location === link.href && (
@@ -86,7 +101,7 @@ export function Navbar() {
           <Link href="/contact?ref=navbar">
             <Button className={cn(
               "rounded-none shadow-none font-medium transition-all",
-              !scrolled && location === "/" ? "bg-white text-primary hover:bg-white/90" : ""
+              !useDarkStyle && location === "/" ? "bg-white text-primary hover:bg-white/90" : ""
             )}>
               Get a Free Quote
             </Button>
@@ -97,7 +112,7 @@ export function Navbar() {
         <button
           className={cn(
             "md:hidden p-2 rounded-md transition-colors",
-            scrolled ? "text-foreground" : "text-foreground md:text-white"
+            useDarkStyle ? "text-foreground" : "text-foreground md:text-white"
           )}
           onClick={() => setIsOpen(!isOpen)}
         >
