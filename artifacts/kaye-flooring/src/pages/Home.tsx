@@ -8,7 +8,7 @@ import heroImg from "@assets/generated_images/hero.jpg";
 import stairsImg from "@assets/generated_images/stairs.jpg";
 import lvpImg from "@assets/generated_images/lvp.jpg";
 import solidImg from "@assets/generated_images/solid.jpg";
-import ownerImg from "@assets/generated_images/about-owner.jpg";
+import ownerImg from "@assets/generated_images/gerrit-kaye.png";
 
 const FADE_UP: Variants = {
   hidden: { opacity: 0, y: 30 },

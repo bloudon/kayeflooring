@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
-import ownerImg from "@assets/generated_images/about-owner.jpg";
+import ownerImg from "@assets/generated_images/gerrit-kaye.png";
 
 export default function About() {
   return (
