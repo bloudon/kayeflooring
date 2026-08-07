@@ -3,6 +3,7 @@ import { motion, type Variants } from "framer-motion";
 import { Link } from "wouter";
 import { CheckCircle2, Star, ArrowRight, MapPin, Phone, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroImg from "@assets/generated_images/gallery-1.jpg";
 
 const FADE_UP: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -160,8 +161,9 @@ export default function Ocala() {
     <div className="w-full">
 
       {/* HERO */}
-      <section className="pt-32 pb-20 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTAgMzBoNjBNMzAgMHYzMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=')] pointer-events-none" />
+      <section className="pt-32 pb-20 text-white relative overflow-hidden">
+        <img src={heroImg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <motion.div initial="hidden" animate="visible" variants={STAGGER}>
             <motion.div variants={FADE_UP} className="flex items-center gap-2 text-primary-foreground/70 text-sm mb-6">
