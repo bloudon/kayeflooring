@@ -66,3 +66,17 @@ Sitemap: https://kayeflooring.com/sitemap.xml
 ```
 
 This means even without a manual submission, Google will eventually find it. The manual submission just speeds up the process from weeks to days.
+
+---
+
+## Step 5 – Monitor Indexing (1–2 weeks later)
+
+After submitting, check back in 1–2 weeks to confirm all 10 URLs have been indexed by Google.
+
+**→ Follow the Coverage Checklist:** [`gsc-coverage-checklist.md`](./gsc-coverage-checklist.md)
+
+That checklist walks you through:
+- Reading the Coverage/Pages report in Search Console
+- What "Valid", "Excluded", and "Error" statuses mean
+- How to request indexing for any slow pages
+- A sign-off checklist for all 10 sitemap URLs
