@@ -151,7 +151,7 @@ export default function Home() {
                 <p className="text-xs text-primary-foreground/75 leading-relaxed mt-2">
                   Lady Lake · Wildwood · Oxford · Fruitland Park · Coleman · Lake Panasoffkee
                 </p>
-                <Link href="/the-villages">
+                <Link href="/villages-fl-flooring-installation">
                   <span className="inline-block mt-3 text-[11px] font-bold uppercase tracking-wider text-primary-foreground/90 underline underline-offset-4 cursor-pointer hover:text-primary-foreground transition-colors">
                     View Villages flooring page →
                   </span>

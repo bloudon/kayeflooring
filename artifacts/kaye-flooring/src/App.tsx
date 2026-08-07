@@ -39,7 +39,7 @@ function Router() {
                 <Route path="/about" component={About} />
                 <Route path="/testimonials" component={Testimonials} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/the-villages" component={TheVillages} />
+                <Route path="/villages-fl-flooring-installation" component={TheVillages} />
                 <Route component={NotFound} />
               </Switch>
             </main>

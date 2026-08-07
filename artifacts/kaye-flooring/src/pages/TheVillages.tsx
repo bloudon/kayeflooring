@@ -47,7 +47,7 @@ const SCHEMA = {
       "@id": "https://kayeflooring.com/#business",
       "name": "Kaye Flooring Inc",
       "description": "Licensed flooring installation contractor serving The Villages, FL. Specializing in hardwood, luxury vinyl plank, and custom stair installation for residential homes in The Villages community.",
-      "url": "https://kayeflooring.com/the-villages",
+      "url": "https://kayeflooring.com/villages-fl-flooring-installation",
       "telephone": "+13529884006",
       "email": "info@kayeflooring.com",
       "image": "https://kayeflooring.com/apple-touch-icon.png",
