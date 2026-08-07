@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Upload, Trash2, LogOut, ImagePlus, CheckCircle, AlertCircle, Loader2, Lock } from "lucide-react";
+import { Upload, Trash2, LogOut, ImagePlus, CheckCircle, AlertCircle, Loader2, Lock, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -10,6 +10,7 @@ interface Photo {
   id: string;
   full: string;
   thumb: string;
+  caption: string;
 }
 
 // ── Auth screen ───────────────────────────────────────────────────────────────
@@ -79,6 +80,56 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
           </Button>
         </form>
       </motion.div>
+    </div>
+  );
+}
+
+// ── Inline caption editor ─────────────────────────────────────────────────────
+function CaptionInput({ photoId, initialCaption, onSaved }: {
+  photoId: string;
+  initialCaption: string;
+  onSaved: (caption: string) => void;
+}) {
+  const [value, setValue] = useState(initialCaption);
+  const [saving, setSaving] = useState(false);
+
+  async function save() {
+    if (value === initialCaption) return;
+    setSaving(true);
+    try {
+      await fetch(`${BASE}/api/admin/photos/${photoId}/caption`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ caption: value }),
+      });
+      onSaved(value);
+    } catch {
+      setValue(initialCaption); // revert on error
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") { e.currentTarget.blur(); }
+    if (e.key === "Escape") { setValue(initialCaption); e.currentTarget.blur(); }
+  }
+
+  return (
+    <div className="relative flex items-center gap-1 px-1 pt-1">
+      <Pencil className="w-3 h-3 text-[#2c1810]/30 shrink-0" />
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onBlur={() => void save()}
+        onKeyDown={handleKeyDown}
+        maxLength={120}
+        placeholder="Add a caption…"
+        className="w-full text-xs text-[#2c1810]/70 placeholder:text-[#2c1810]/30 bg-transparent border-b border-transparent focus:border-[#c8956c] focus:outline-none py-0.5 transition-colors"
+      />
+      {saving && <Loader2 className="w-3 h-3 text-[#c8956c] animate-spin shrink-0" />}
     </div>
   );
 }
@@ -258,25 +309,38 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.85 }}
                   transition={{ duration: 0.25 }}
-                  className="relative group aspect-square overflow-hidden rounded-sm bg-[#2c1810]/5"
+                  className="group rounded-sm bg-white shadow-sm overflow-hidden"
                 >
-                  <img
-                    src={photo.thumb}
-                    alt="Flooring job"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-200 flex items-center justify-center">
-                    <button
-                      onClick={() => void deletePhoto(photo.id)}
-                      disabled={deletingId === photo.id}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-red-600 hover:bg-red-700 text-white rounded-full p-2 shadow-lg"
-                      title="Delete photo"
-                    >
-                      {deletingId === photo.id
-                        ? <Loader2 className="w-4 h-4 animate-spin" />
-                        : <Trash2 className="w-4 h-4" />}
-                    </button>
+                  {/* Image */}
+                  <div className="relative aspect-square overflow-hidden bg-[#2c1810]/5">
+                    <img
+                      src={photo.thumb}
+                      alt={photo.caption || "Flooring job"}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-200 flex items-center justify-center">
+                      <button
+                        onClick={() => void deletePhoto(photo.id)}
+                        disabled={deletingId === photo.id}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-red-600 hover:bg-red-700 text-white rounded-full p-2 shadow-lg"
+                        title="Delete photo"
+                      >
+                        {deletingId === photo.id
+                          ? <Loader2 className="w-4 h-4 animate-spin" />
+                          : <Trash2 className="w-4 h-4" />}
+                      </button>
+                    </div>
+                  </div>
+                  {/* Caption */}
+                  <div className="pb-1.5">
+                    <CaptionInput
+                      photoId={photo.id}
+                      initialCaption={photo.caption}
+                      onSaved={(caption) =>
+                        setPhotos((prev) => prev.map((p) => p.id === photo.id ? { ...p, caption } : p))
+                      }
+                    />
                   </div>
                 </motion.div>
               ))}

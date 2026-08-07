@@ -30,6 +30,7 @@ interface ApiPhoto {
   id: string;
   full: string;
   thumb: string;
+  caption?: string;
 }
 
 interface GalleryItem {
@@ -129,10 +130,10 @@ export default function Gallery() {
       .then((r) => r.json())
       .then((data: ApiPhoto[]) => {
         if (Array.isArray(data) && data.length > 0) {
-          setItems(data.map((p, i) => ({
+          setItems(data.map((p) => ({
             src: p.thumb,
             fullSrc: p.full,
-            alt: `Kaye Flooring installation ${i + 1}`,
+            alt: p.caption?.trim() || "Kaye Flooring installation",
           })));
         } else {
           // Fall back to placeholders until real photos are uploaded
