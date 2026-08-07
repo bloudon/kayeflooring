@@ -35,6 +35,10 @@ module.exports = {
         SMTP_FROM: "info@kayeflooring.com",
         SMTP_TO: "kayeflooring@gmail.com",
         SMTP_PASS: "REPLACE_WITH_SMTP2GO_PASSWORD",
+        // Required for signed session cookies (gallery admin login)
+        SESSION_SECRET: "REPLACE_WITH_A_LONG_RANDOM_STRING",
+        // Required for the gallery admin password at /admin
+        ADMIN_PASSWORD: "REPLACE_WITH_ADMIN_PASSWORD",
       },
     },
   ],
