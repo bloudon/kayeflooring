@@ -95,6 +95,16 @@ export function Footer() {
                   <span className="text-white/70 hover:text-white transition-colors cursor-pointer text-sm">Apopka</span>
                 </Link>
               </li>
+              <li>
+                <Link href="/lady-lake">
+                  <span className="text-white/70 hover:text-white transition-colors cursor-pointer text-sm">Lady Lake</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/leesburg">
+                  <span className="text-white/70 hover:text-white transition-colors cursor-pointer text-sm">Leesburg</span>
+                </Link>
+              </li>
             </ul>
           </div>
 

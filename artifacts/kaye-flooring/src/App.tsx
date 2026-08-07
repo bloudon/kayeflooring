@@ -19,6 +19,8 @@ import { ScrollToTop } from '@/components/layout/ScrollToTop';
 import Ocala from '@/pages/Ocala';
 import Clermont from '@/pages/Clermont';
 import Apopka from '@/pages/Apopka';
+import LadyLake from '@/pages/LadyLake';
+import Leesburg from '@/pages/Leesburg';
 
 const queryClient = new QueryClient();
 
@@ -46,6 +48,8 @@ function Router() {
                 <Route path="/ocala" component={Ocala} />
                 <Route path="/clermont" component={Clermont} />
                 <Route path="/apopka" component={Apopka} />
+                <Route path="/lady-lake" component={LadyLake} />
+                <Route path="/leesburg" component={Leesburg} />
                 <Route component={NotFound} />
               </Switch>
             </main>
