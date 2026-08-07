@@ -13,6 +13,7 @@ import About from '@/pages/About';
 import Testimonials from '@/pages/Testimonials';
 import Contact from '@/pages/Contact';
 import TheVillages from '@/pages/TheVillages';
+import Admin from '@/pages/Admin';
 import NotFound from '@/pages/not-found';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
 
@@ -20,23 +21,33 @@ const queryClient = new QueryClient();
 
 function Router() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <ScrollToTop />
-      <Navbar />
-      <main className="flex-grow">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/services" component={Services} />
-          <Route path="/gallery" component={Gallery} />
-          <Route path="/about" component={About} />
-          <Route path="/testimonials" component={Testimonials} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/the-villages" component={TheVillages} />
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-      <Footer />
-    </div>
+    <Switch>
+      {/* Admin — full-page, no nav/footer */}
+      <Route path="/admin" component={Admin} />
+
+      {/* Public site */}
+      <Route>
+        {() => (
+          <div className="flex flex-col min-h-screen">
+            <ScrollToTop />
+            <Navbar />
+            <main className="flex-grow">
+              <Switch>
+                <Route path="/" component={Home} />
+                <Route path="/services" component={Services} />
+                <Route path="/gallery" component={Gallery} />
+                <Route path="/about" component={About} />
+                <Route path="/testimonials" component={Testimonials} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/the-villages" component={TheVillages} />
+                <Route component={NotFound} />
+              </Switch>
+            </main>
+            <Footer />
+          </div>
+        )}
+      </Route>
+    </Switch>
   );
 }
 
