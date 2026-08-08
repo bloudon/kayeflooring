@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
-const GOOGLE_REVIEW_URL = "https://g.page/r/CbI2aQ6FKayeFlooring/review";
+const GOOGLE_REVIEW_URL = "https://g.page/r/CWSZd8kakNJ5EAI/review";
 
 const REF_LABELS: Record<string, string> = {
   "hero":                  "Hero — Get Your Free Estimate",

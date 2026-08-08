@@ -3,7 +3,7 @@ import { Star, Quote, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
-const GOOGLE_REVIEW_URL = "https://g.page/r/CbI2aQ6FKayeFlooring/review";
+const GOOGLE_REVIEW_URL = "https://g.page/r/CWSZd8kakNJ5EAI/review";
 
 const reviews = [
   {
