@@ -51,7 +51,7 @@ const SCHEMA = {
       "description": "Licensed flooring installation contractor serving The Villages, FL. Specializing in hardwood, luxury vinyl plank, and custom stair installation for residential homes in The Villages community.",
       "url": "https://kayeflooring.com/villages-fl-flooring-installation",
       "telephone": "+13529884006",
-      "email": "info@kayeflooring.com",
+      "email": "kayeflooring@gmail.com",
       "image": "https://kayeflooring.com/apple-touch-icon.png",
       "priceRange": "$$",
       "paymentAccepted": "Cash, Check, Credit Card",
@@ -93,9 +93,10 @@ const SCHEMA = {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "47",
-        "bestRating": "5"
+        "ratingValue": 5,
+        "reviewCount": 47,
+        "bestRating": 5,
+        "worstRating": 1
       }
     },
     {

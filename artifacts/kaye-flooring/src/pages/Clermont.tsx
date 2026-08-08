@@ -93,9 +93,10 @@ const SCHEMA = {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "47",
-        "bestRating": "5"
+        "ratingValue": 5,
+        "reviewCount": 47,
+        "bestRating": 5,
+        "worstRating": 1
       }
     },
     {
