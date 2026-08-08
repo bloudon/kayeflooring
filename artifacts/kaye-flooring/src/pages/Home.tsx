@@ -180,14 +180,14 @@ export default function Home() {
                 {
                   county: "Citrus County",
                   cities: ["Inverness", "Crystal River", "Homosassa Springs", "Beverly Hills", "Floral City", "Lecanto"],
-                  link: "/contact?ref=citrus",
-                  linkLabel: "Request a quote for Citrus County",
+                  link: "/citrus-county-flooring",
+                  linkLabel: "View Citrus County flooring page",
                 },
                 {
                   county: "Hernando County",
                   cities: ["Brooksville", "Spring Hill", "Weeki Wachee", "Ridge Manor", "Masaryktown"],
-                  link: "/contact?ref=hernando",
-                  linkLabel: "Request a quote for Hernando County",
+                  link: "/hernando-county-flooring",
+                  linkLabel: "View Hernando County flooring page",
                 },
               ].map((area, i) => (
                 <motion.div

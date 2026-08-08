@@ -21,6 +21,8 @@ import Clermont from '@/pages/Clermont';
 import Apopka from '@/pages/Apopka';
 import LadyLake from '@/pages/LadyLake';
 import Leesburg from '@/pages/Leesburg';
+import Citrus from '@/pages/Citrus';
+import Hernando from '@/pages/Hernando';
 
 const queryClient = new QueryClient();
 
@@ -50,6 +52,8 @@ function Router() {
                 <Route path="/apopka" component={Apopka} />
                 <Route path="/lady-lake" component={LadyLake} />
                 <Route path="/leesburg" component={Leesburg} />
+                <Route path="/citrus-county-flooring" component={Citrus} />
+                <Route path="/hernando-county-flooring" component={Hernando} />
                 <Route component={NotFound} />
               </Switch>
             </main>
