@@ -58,6 +58,7 @@ export function FloridaMap() {
                       key={geo.rsmKey}
                       geography={geo}
                       style={{
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         default: {
                           fill:        svc ? COLOR_SERVICE : COLOR_OTHER,
                           stroke:      svc ? COLOR_STROKE_SERVICE : COLOR_STROKE_OTHER,
@@ -66,14 +67,15 @@ export function FloridaMap() {
                           cursor:      svc ? "pointer" : "default",
                           transition:  "fill 0.18s ease",
                           filter:      svc ? "url(#county-glow)" : "none",
-                        },
+                        } as any,
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         hover: {
                           fill:        svc ? COLOR_SERVICE_HOVER : COLOR_OTHER,
                           stroke:      svc ? COLOR_STROKE_SERVICE : COLOR_STROKE_OTHER,
                           strokeWidth: svc ? 1.0 : 0.5,
                           outline:     "none",
                           filter:      svc ? "url(#county-glow)" : "none",
-                        },
+                        } as any,
                         pressed: { outline: "none" },
                       }}
                       onMouseEnter={(e: React.MouseEvent) => {
