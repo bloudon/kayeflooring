@@ -1,6 +1,6 @@
 # Google Search Console – Coverage & Indexing Checklist
 
-Use this checklist after submitting the sitemap to confirm Google has indexed all 10 pages.
+Use this checklist after submitting the sitemap to confirm Google has indexed all 14 pages.
 
 ---
 
@@ -8,8 +8,9 @@ Use this checklist after submitting the sitemap to confirm Google has indexed al
 
 | When | What to check |
 |------|---------------|
+| **Immediately after submission** | Use URL Inspection to request indexing for the 2 new county pages |
 | **1 week after submission** | Open Coverage report — confirm status shows "Success", check for Errors |
-| **2 weeks after submission** | Verify all 10 URLs are "Valid"; investigate any "Excluded" entries |
+| **2 weeks after submission** | Verify all 14 URLs are "Valid"; investigate any "Excluded" entries |
 | **Monthly (ongoing)** | Spot-check new city pages rank in search; re-check if new pages are added |
 
 > **Set a calendar reminder now** for 1 week and 2 weeks from today so you don't forget.
@@ -30,9 +31,9 @@ Use this checklist after submitting the sitemap to confirm Google has indexed al
 2. Find `https://kayeflooring.com/sitemap.xml`
 3. Confirm:
    - **Status:** Success ✅
-   - **Discovered URLs:** 10
+   - **Discovered URLs:** 14
 
-If it shows fewer than 10, click the sitemap link to see which URLs were excluded.
+If it shows fewer than 14, click the sitemap link to see which URLs were excluded.
 
 ---
 
@@ -43,7 +44,7 @@ In the **Pages** report, look at each status tab:
 ### ✅ "Valid" — Good
 All pages listed here are indexed and eligible to appear in Google search results.
 
-**Goal:** All 10 of these URLs should eventually appear as Valid:
+**Goal:** All 14 of these URLs should eventually appear as Valid:
 - `https://kayeflooring.com/`
 - `https://kayeflooring.com/services`
 - `https://kayeflooring.com/gallery`
@@ -54,6 +55,10 @@ All pages listed here are indexed and eligible to appear in Google search result
 - `https://kayeflooring.com/ocala`
 - `https://kayeflooring.com/clermont`
 - `https://kayeflooring.com/apopka`
+- `https://kayeflooring.com/lady-lake`
+- `https://kayeflooring.com/leesburg`
+- `https://kayeflooring.com/citrus-county-flooring` ← new
+- `https://kayeflooring.com/hernando-county-flooring` ← new
 
 ---
 
@@ -87,18 +92,18 @@ Error pages are actively broken. Common errors:
 If a specific page hasn't been indexed after 2 weeks:
 
 1. In Google Search Console, click the **URL Inspection** tool (top search bar)
-2. Paste the full URL (e.g. `https://kayeflooring.com/ocala`)
+2. Paste the full URL (e.g. `https://kayeflooring.com/citrus-county-flooring`)
 3. Click **"Request Indexing"**
 
-This asks Google to prioritize crawling that specific page. You can do this for each of the 10 URLs if needed.
+This asks Google to prioritize crawling that specific page. You can do this for each of the 14 URLs if needed.
 
 > **Limit:** Google allows ~10 "Request Indexing" requests per day per property.
 
 ---
 
-## Step 5 – Confirm All 10 Pages Are Valid ✅
+## Step 5 – Confirm All 14 Pages Are Valid ✅
 
-Once all 10 URLs appear in the "Valid" tab, the indexing task is complete.
+Once all 14 URLs appear in the "Valid" tab, the indexing task is complete.
 
 Check them off here:
 
@@ -112,17 +117,22 @@ Check them off here:
 - [ ] `https://kayeflooring.com/ocala`
 - [ ] `https://kayeflooring.com/clermont`
 - [ ] `https://kayeflooring.com/apopka`
+- [ ] `https://kayeflooring.com/lady-lake`
+- [ ] `https://kayeflooring.com/leesburg`
+- [ ] `https://kayeflooring.com/citrus-county-flooring` ← new
+- [ ] `https://kayeflooring.com/hernando-county-flooring` ← new
 
 ---
 
-## Quick Reference – City Pages to Watch Closely
+## Quick Reference – Newest Pages to Watch Closely
 
-These are the newest pages and the most important to confirm indexed:
+These are the most recent pages and the most important to confirm indexed:
 
 | Page | URL | Target Searches |
 |------|-----|-----------------|
-| Ocala | `/ocala` | "flooring Ocala FL", "hardwood floors Ocala" |
-| Clermont | `/clermont` | "flooring Clermont FL", "flooring installer Clermont" |
-| Apopka | `/apopka` | "flooring Apopka FL", "hardwood floors Apopka" |
+| Citrus County | `/citrus-county-flooring` | "flooring Crystal River FL", "hardwood floors Citrus County", "flooring Inverness FL" |
+| Hernando County | `/hernando-county-flooring` | "flooring Brooksville FL", "hardwood floors Hernando County", "flooring Spring Hill FL" |
+| Lady Lake | `/lady-lake` | "flooring Lady Lake FL", "hardwood floors Lady Lake" |
+| Leesburg | `/leesburg` | "flooring Leesburg FL", "flooring installer Leesburg" |
 
 Once indexed, you can verify ranking by searching Google for these terms and looking for kayeflooring.com in the results.
