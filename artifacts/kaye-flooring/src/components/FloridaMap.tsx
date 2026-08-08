@@ -11,6 +11,7 @@ const FL_PREFIX = "12";
 const SERVICE_COUNTIES: Record<string, { name: string; cities: string[] }> = {
   "12017": { name: "Citrus County",  cities: ["Inverness", "Crystal River", "Homosassa Springs", "Beverly Hills", "Floral City"] },
   "12053": { name: "Hernando County", cities: ["Brooksville", "Spring Hill", "Weeki Wachee", "Ridge Manor"] },
+  "12101": { name: "Pasco County",   cities: ["New Port Richey", "Zephyrhills", "Dade City", "Wesley Chapel", "Land O' Lakes"] },
   "12069": { name: "Lake County",    cities: ["Lady Lake", "Leesburg", "Mount Dora", "Clermont", "Eustis", "Tavares", "Groveland"] },
   "12083": { name: "Marion County",  cities: ["Ocala", "Belleview", "Dunnellon", "Silver Springs Shores", "Weirsdale"] },
   "12095": { name: "Orange County (West)", cities: ["Apopka", "Winter Garden", "Ocoee", "Windermere"] },

@@ -189,6 +189,12 @@ export default function Home() {
                   link: "/hernando-county-flooring",
                   linkLabel: "View Hernando County flooring page",
                 },
+                {
+                  county: "Pasco County",
+                  cities: ["New Port Richey", "Zephyrhills", "Dade City", "Wesley Chapel", "Land O' Lakes"],
+                  link: "/pasco-county-flooring",
+                  linkLabel: "View Pasco County flooring page",
+                },
               ].map((area, i) => (
                 <motion.div
                   key={area.county}

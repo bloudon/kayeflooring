@@ -23,6 +23,7 @@ import LadyLake from '@/pages/LadyLake';
 import Leesburg from '@/pages/Leesburg';
 import Citrus from '@/pages/Citrus';
 import Hernando from '@/pages/Hernando';
+import Pasco from '@/pages/Pasco';
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ function Router() {
                 <Route path="/leesburg" component={Leesburg} />
                 <Route path="/citrus-county-flooring" component={Citrus} />
                 <Route path="/hernando-county-flooring" component={Hernando} />
+                <Route path="/pasco-county-flooring" component={Pasco} />
                 <Route component={NotFound} />
               </Switch>
             </main>
