@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Mail, MapPin, Phone } from "lucide-react";
+import { trackPhoneClick } from "@/lib/analytics";
 
 export function Footer() {
   return (
@@ -117,7 +118,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-white/70 text-sm">
                 <Phone size={18} className="text-primary shrink-0" />
-                <a href="tel:3529884006" className="hover:text-white transition-colors">(352) 988-4006</a>
+                <a href="tel:3529884006" onClick={trackPhoneClick} className="hover:text-white transition-colors">(352) 988-4006</a>
               </li>
               <li className="flex items-center gap-3 text-white/70 text-sm">
                 <Mail size={18} className="text-primary shrink-0" />

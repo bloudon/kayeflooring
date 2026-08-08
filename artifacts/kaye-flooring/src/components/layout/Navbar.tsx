@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
+import { trackPhoneClick } from "@/lib/analytics";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -144,7 +145,7 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="pt-4 flex flex-col gap-4">
-                <a href="tel:3529884006" className="flex items-center gap-2 text-muted-foreground">
+                <a href="tel:3529884006" onClick={trackPhoneClick} className="flex items-center gap-2 text-muted-foreground">
                   <Phone size={18} />
                   <span>(352) 988-4006</span>
                 </a>

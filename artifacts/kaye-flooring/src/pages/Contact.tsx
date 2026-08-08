@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { useSearch } from "wouter";
 import { motion } from "framer-motion";
+import { trackPhoneClick } from "@/lib/analytics";
 import { MapPin, Phone, Mail, Clock, Tag, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -133,7 +134,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Phone</p>
-                    <a href="tel:3529884006" className="text-muted-foreground hover:text-primary transition-colors">(352) 988-4006</a>
+                    <a href="tel:3529884006" onClick={trackPhoneClick} className="text-muted-foreground hover:text-primary transition-colors">(352) 988-4006</a>
                   </div>
                 </div>
 

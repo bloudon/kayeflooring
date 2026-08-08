@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Link } from "wouter";
+import { trackPhoneClick } from "@/lib/analytics";
 import { CheckCircle2, Star, ArrowRight, MapPin, Phone, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@assets/generated_images/gallery-3.jpg";
@@ -186,7 +187,7 @@ export default function Leesburg() {
                   Get a Free Estimate
                 </Button>
               </Link>
-              <a href="tel:3529884006">
+              <a href="tel:3529884006" onClick={trackPhoneClick}>
                 <Button size="lg" variant="outline" className="rounded-none h-14 px-10 text-base border-white/30 text-white hover:bg-white hover:text-primary transition-all">
                   <Phone size={18} className="mr-2" />
                   (352) 988-4006
@@ -450,7 +451,7 @@ export default function Leesburg() {
                   Schedule a Free Estimate
                 </Button>
               </Link>
-              <a href="tel:3529884006">
+              <a href="tel:3529884006" onClick={trackPhoneClick}>
                 <Button size="lg" variant="outline" className="rounded-none h-14 px-10 text-base border-white/30 text-white hover:bg-white hover:text-primary transition-all gap-2">
                   <Phone size={18} />
                   (352) 988-4006
