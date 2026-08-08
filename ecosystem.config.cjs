@@ -17,6 +17,7 @@ module.exports = {
       cwd: "/home/administrator/apps/kayeflooring/artifacts/api-server",
       node_args: "--enable-source-maps",
       instances: 1,
+      exec_mode: "fork",
       autorestart: true,
       watch: false,
       max_memory_restart: "256M",
