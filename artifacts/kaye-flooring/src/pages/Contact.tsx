@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { useSearch } from "wouter";
 import { motion } from "framer-motion";
-import { trackPhoneClick } from "@/lib/analytics";
+import { trackPhoneClick, trackFormSubmission } from "@/lib/analytics";
 import { MapPin, Phone, Mail, Clock, Tag, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -79,11 +79,7 @@ export default function Contact() {
       });
 
       // Fire GA4 conversion event
-      if (typeof gtag !== "undefined") {
-        gtag("event", "generate_lead", {
-          source: ref || "direct",
-        });
-      }
+      trackFormSubmission(refLabel || "Direct");
 
       setFormData({ firstName: "", lastName: "", email: "", phone: "", service: preselectedService, message: "" });
       setSubmitted(true);
