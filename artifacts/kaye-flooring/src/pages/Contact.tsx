@@ -153,7 +153,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Service Area</p>
-                    <p className="text-muted-foreground text-sm">Lake, Marion, Orange &amp; Sumter Counties (incl. The Villages)</p>
+                    <p className="text-muted-foreground text-sm">Lake, Marion, Orange, Sumter, Citrus &amp; Hernando Counties</p>
                   </div>
                 </div>
 

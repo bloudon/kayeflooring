@@ -177,6 +177,18 @@ export default function Home() {
                   link: "/apopka",
                   linkLabel: "View Apopka flooring page",
                 },
+                {
+                  county: "Citrus County",
+                  cities: ["Inverness", "Crystal River", "Homosassa Springs", "Beverly Hills", "Floral City", "Lecanto"],
+                  link: "/contact?ref=citrus",
+                  linkLabel: "Request a quote for Citrus County",
+                },
+                {
+                  county: "Hernando County",
+                  cities: ["Brooksville", "Spring Hill", "Weeki Wachee", "Ridge Manor", "Masaryktown"],
+                  link: "/contact?ref=hernando",
+                  linkLabel: "Request a quote for Hernando County",
+                },
               ].map((area, i) => (
                 <motion.div
                   key={area.county}
