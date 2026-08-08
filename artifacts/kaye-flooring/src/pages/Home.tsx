@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Star } from "lucide-react";
@@ -9,6 +10,92 @@ import stairsImg from "@assets/generated_images/stairs.jpg";
 import lvpImg from "@assets/generated_images/lvp.jpg";
 import solidImg from "@assets/generated_images/solid.jpg";
 import ownerImg from "@assets/generated_images/gerrit-kaye.png";
+
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://kayeflooring.com/#business",
+      "name": "Kaye Flooring Inc",
+      "description": "Licensed flooring installation contractor serving Central Florida. Specializing in hardwood, luxury vinyl plank (LVP), and custom stair installation for residential homes across Marion, Lake, Citrus, Hernando, Pasco, and Orange counties.",
+      "url": "https://kayeflooring.com",
+      "telephone": "+13529884006",
+      "email": "kayeflooring@gmail.com",
+      "image": "https://kayeflooring.com/apple-touch-icon.png",
+      "priceRange": "$$",
+      "paymentAccepted": "Cash, Check, Credit Card",
+      "currenciesAccepted": "USD",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ocala",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Marion County", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "AdministrativeArea", "name": "Lake County", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "AdministrativeArea", "name": "Citrus County", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "AdministrativeArea", "name": "Hernando County", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "AdministrativeArea", "name": "Pasco County", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "AdministrativeArea", "name": "Orange County", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "AdministrativeArea", "name": "Sumter County", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Ocala", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Wildwood", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Oxford", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Fruitland Park", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Coleman", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Lake Panasoffkee", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "The Villages", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Lady Lake", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Leesburg", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Clermont", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Tavares", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Mount Dora", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Eustis", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Inverness", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Crystal River", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Homosassa Springs", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Brooksville", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Spring Hill", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "New Port Richey", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Wesley Chapel", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Zephyrhills", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Apopka", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Winter Garden", "containedInPlace": { "@type": "State", "name": "Florida" } },
+        { "@type": "City", "name": "Windermere", "containedInPlace": { "@type": "State", "name": "Florida" } }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Flooring Installation Services — Central Florida",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Luxury Vinyl Plank (LVP) Installation", "description": "Waterproof, durable LVP flooring ideal for Florida's year-round humidity and active households." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hardwood Flooring Installation", "description": "Solid and engineered hardwood installation for Central Florida homes seeking timeless elegance and lasting value." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Stair Installation", "description": "Stair tread replacement and full staircase renovation throughout Marion, Lake, Citrus, Hernando, and Pasco counties." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Floor Repair & Refinishing", "description": "Hardwood refinishing and floor repair services for existing flooring throughout Central Florida." } }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "47",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://kayeflooring.com/#website",
+      "url": "https://kayeflooring.com",
+      "name": "Kaye Flooring Inc",
+      "description": "Premium flooring installation across Central Florida — hardwood, luxury vinyl plank, and custom stairs.",
+      "publisher": { "@id": "https://kayeflooring.com/#business" }
+    }
+  ]
+};
 
 const FADE_UP: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -24,6 +111,18 @@ const STAGGER: Variants = {
 };
 
 export default function Home() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "home-schema";
+    script.text = JSON.stringify(SCHEMA);
+    document.head.appendChild(script);
+
+    return () => {
+      document.getElementById("home-schema")?.remove();
+    };
+  }, []);
+
   return (
     <div className="w-full">
       {/* HERO SECTION */}
